@@ -30,7 +30,7 @@ int main(int argc, char * argv[])
 
   // If user requests FIFO
 
-  if (strcmp(argv[2], "FIFO") == 0)
+  if (strcmp(argv[2], "CLOCK") == 0)
 
   {
 
