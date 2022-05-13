@@ -82,24 +82,22 @@ int main(int argc, char * argv[])
         else
         // Replace by FIFO unless there's a second chance
         {
-          //if the second chance is not 0
+          while(sec_chance[pageToUnload] != 0){
+            //if second chance set it back to 0 and move to the next page
+            sec_chance[pageToUnload] = 0;
+            pageToUnload = (pageToUnload + 1) % no_frames;
+          }
 
-
-          //if the second chance is 0
+          //second chance should now be 0
           printf("Page %d unloaded from Frame %d, Page %d loaded into Frame %d \n", frame[pageToUnload], pageToUnload, num, pageToUnload);
 
           frame[pageToUnload] = num;
 
           // update first in page
-
           pageToUnload = (pageToUnload + 1) % no_frames;
-
         }
-
       }
-
       j++;
-
     }
 
     printf("%d page faults\n", pageFaults);
