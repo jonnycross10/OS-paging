@@ -60,7 +60,7 @@ int main(int argc, char * argv[])
         {
           // set the exist flag and the second chance value to 1
           printf("Page %d already in Frame %d\n", num, i);
-          sec_chance[frameFree] = 1;
+          sec_chance[i] = 1;
           flagExist = 1;
         }
       }
